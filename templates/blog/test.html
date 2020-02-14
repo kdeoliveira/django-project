@@ -1,0 +1,36 @@
+<!-- HTML python code blocks -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if title %}
+    <title>Test App - {{title}} </title>
+    {%else%}
+    <title> Django Default Title</title>
+    {%endif%}
+
+
+
+    
+</head>
+
+<body>
+    <!-- {_% %_} for code/logic statements -->
+    <!-- {_{}_} to access variables -->
+    {% for post in posts %}
+    <!-- can access value of dictionary directy instead of using dic.get() -->
+    <h1>{{post.title}}</h1>
+    <!-- Variable/Atribute to acecss user informatin (username) -->
+    <h2>{{user.username}}</h2>
+    <h3>{{user.email}}</h3>
+    <p>By {{ post.author }} on {{post.date_posted}}</p>
+    <P>{{post.content}}</P>
+    {% endfor %}
+</body>
+
+</html>

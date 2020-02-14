@@ -1,0 +1,23 @@
+{% extends '../_base.html' %}
+
+{% block content %}
+
+    <article class="media-body content-section">
+        <img src="{{posts.author.profile.image.url}}" class="rounded-circle article-img">
+        <div class="article-metadata">
+            <a href="{% url 'post_user' posts.author.username%}" class="mr-2"> {{posts.author}} </a>
+            <!-- Formatting dates -->
+            <small class="text-muted">{{posts.date_posted|date:"F, d Y"}}</small>
+        </div>
+        <h2 class="article-title">{{posts.title}}</h2>
+        <p class="article-content">{{posts.content}}</p>
+          <!-- passes the posts' ID as paramater for URL -->
+        <div class="row mx-auto">
+        {% if posts.author == user %}
+            <a href="{% url 'post_update' posts.id %}" class="btn btn-secondary"> Update Post </a>
+            <a href="{% url 'post_delete' posts.id %}" class="btn btn-danger ml-4"> Delete Post </a>
+        {% endif %}
+        </div>
+    </article>
+
+{% endblock %}

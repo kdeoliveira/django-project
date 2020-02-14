@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+    <h1>Home Page</h1>
+        <div class="btn-group mb-3" role="group" aria-label="Basic example">
+            <a href="{% url 'blog_home' %}" class="btn btn-secondary" role="button"> Blog </a>
+            <a href="{% url 'blog_about' %}" class="btn btn-secondary" role="button"> About </a>
+            <a href="{% url 'admin:index' %}" class="btn btn-secondary" role="button"> Admin </a>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends '../_base.html' %}
+{% block content %}
+
+        <article class="media-body content-section">
+            <form method="POST">
+                {% csrf_token %}
+            <h2 class="account-heading">Delete Post</h2>
+            <p>Are you sure yoou want to delete the post {{posts.title }} </p>
+
+                <button class="btn btn-outline-danger" type="submit"> Delete </button>
+                <a class="btn btn-outline-info" role="button" href="{% url 'post_detail' posts.id %}">Cancel</button>
+            </form>
+        </article>
+
+{% endblock %}
